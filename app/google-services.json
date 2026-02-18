@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "339680340981",
+    "project_id": "ordy-28323",
+    "storage_bucket": "ordy-28323.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:339680340981:android:595f40a40c383677904ebc",
+        "android_client_info": {
+          "package_name": "com.example.ordy"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDKNLuxlR9shgyXUU-vw-hyEyGBxTfWlck"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

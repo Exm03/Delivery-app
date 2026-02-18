@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Ordy</string>
+    <string name="slogan">Eat much and eat teasty</string>
+    <string name="register">Sign up</string>
+    <string name="auth">Sign in</string>
+    <string name="authUser">Profile</string>
+    <string name="hintPhone">Phone number</string>
+    <string name="hintPass">Password</string>
+    <string name="hintName">Name</string>
+</resources>
