@@ -19,6 +19,12 @@ class MainActivity : AppCompatActivity() {
             insets
         }
 
+        val user = SignIn.getDefults("UserPhone", this)
+        if (user != null && user.length> 2) {
+            val intent = Intent(this, FoodPage::class.java)
+            startActivity(intent)
+        }
+
         val btnSignUp = findViewById<Button>(R.id.btnSignUp)
         val btnSignIn = findViewById<Button>(R.id.btnSignIn)
 

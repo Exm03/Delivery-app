@@ -41,6 +41,9 @@ class SignUp : AppCompatActivity() {
                     }else{
                         val user = Users(editName.text.toString(), editPass.text.toString())
                         table.child(editPhone.text.toString()).setValue(user)
+                        editName.setText("")
+                        editPhone.setText("")
+                        editPass.setText("")
                         Toast.makeText(this@SignUp, "Registration successful", Toast.LENGTH_SHORT).show()
                     }
                 }
