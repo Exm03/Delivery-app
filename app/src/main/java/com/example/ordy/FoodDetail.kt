@@ -1,7 +1,9 @@
 package com.example.ordy
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
+import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
@@ -9,13 +11,14 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.example.ordy.Models.Cart
 import com.example.ordy.Models.Category
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 import com.example.ordy.Models.Food
-
+import com.example.ordy.helpers.JSONHelper
 
 
 class FoodDetail : AppCompatActivity() {
@@ -89,7 +92,38 @@ class FoodDetail : AppCompatActivity() {
 
         })
 
-    }
+        val btnGoToCart = findViewById<Button>(R.id.btnGoToCart)
+        btnGoToCart.setOnClickListener {
+            startActivity(Intent(this, CartActivity::class.java))
 
-    public fun btnAddToCart(view: View)
+        }
+
+    }
+    public fun btnAddToCart(view: View) {
+        var cartList: MutableList<Cart?>? = JSONHelper.importFromJSON(this)?.toMutableList()
+
+        if (cartList == null) {
+            cartList = ArrayList()
+            cartList.add(Cart(ID, 1))
+        }else {
+            var isFound  = false
+            for (el in cartList) {
+                if (el?.categoryID == ID) {
+                    el.amount++
+                    isFound = true
+                }
+            }
+
+            if (!isFound) {
+                cartList.add(Cart(ID, 1))
+            }
+
+
+        }
+
+        JSONHelper.expotrToJSON(this, cartList)
+        Toast.makeText(this, "Added to cart", Toast.LENGTH_LONG).show()
+        val btnCart = view as Button
+        btnCart.text = "Added"
+    }
 }

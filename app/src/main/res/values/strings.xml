@@ -8,4 +8,7 @@
     <string name="hintPass">Password</string>
     <string name="hintName">Name</string>
     <string name="addToCart">Add to cart</string>
+    <string name="goToCart">Go to Cart</string>
+    <string name="textCart">Cart</string>
+    <string name="btnMakeOrder">Make order</string>
 </resources>

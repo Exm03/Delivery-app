@@ -10,6 +10,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.ordy.Models.Category
 import com.example.ordy.Models.Users
+import com.example.ordy.helpers.FoodListAdapter
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
@@ -40,7 +41,8 @@ class FoodPage : AppCompatActivity() {
                     allFood.add(category)
                 }
 
-                val arrayAdapter = FoodListAdapter(this@FoodPage, R.layout.food_item_in_list, allFood)
+                val arrayAdapter =
+                    FoodListAdapter(this@FoodPage, R.layout.food_item_in_list, allFood)
                 listView.adapter = arrayAdapter
 
             }
